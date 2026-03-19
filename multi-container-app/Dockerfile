@@ -1,10 +1,5 @@
-FROM python:3.9-slim
+FROM nginx:latest
 
-WORKDIR /app
+COPY index.html /usr/share/nginx/html/index.html
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY app.py .
-
-CMD ["python", "app.py"]
+EXPOSE 80
