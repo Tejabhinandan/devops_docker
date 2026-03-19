@@ -9,9 +9,18 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+            steps {
+                sh 'pwd'
+                sh 'ls -l'
+            }
+        }
+
         stage('Deploy App') {
             steps {
                 dir('multi-container-app') {
+                    sh 'pwd'
+                    sh 'ls -l'
                     sh 'docker-compose down || true'
                     sh 'docker-compose up -d --build'
                 }
