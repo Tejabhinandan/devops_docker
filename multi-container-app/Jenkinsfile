@@ -29,7 +29,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'curl http://localhost:8080 || true'
+                sh 'curl http://localhost:8081 || true'
             }
         }
     }
